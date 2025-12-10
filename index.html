@@ -1,4 +1,4 @@
-<!doctype html>
+
 <html lang="lv">
 <head>
   <meta charset="utf-8" />
@@ -7,49 +7,59 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a class="logo" href="#">VeselīgsDzīvesveids</a>
-      <nav class="nav">
-        <a href="#about">Par</a>
-        <a href="#tips">Padomi</a>
-        <a href="#recipes">Receptes</a>
-        <a href="#contact">Kontakti</a>
+  <a class="skip-link" href="#main">Skipping to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="#" aria-current="page">VeselīgsDzīvesveids</a>
+
+      <nav id="primary-navigation" class="nav" role="navigation" aria-label="Galvenā navigācija">
+        <ul>
+          <li><a href="#about">Par</a></li>
+          <li><a href="#tips">Padomi</a></li>
+          <li><a href="#recipes">Receptes</a></li>
+          <li><a href="#contact">Kontakti</a></li>
+        </ul>
       </nav>
-      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+      <button class="menu-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Atvērt vai aizvērt navigāciju">
+        <span aria-hidden="true">☰</span>
+      </button>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
+  <main id="main" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-heading">
       <div class="container">
-        <h1>Dzīvo veselīgāk katru dienu</h1>
+        <h1 id="hero-heading">Dzīvo veselīgāk katru dienu</h1>
         <p>Vienkārši, praktiski padomi par uzturu, kustību un atpūtu — uzlabot savu labsajūtu mūsdienu ritmā.</p>
         <a class="cta" href="#tips">Skatīt padomus</a>
       </div>
     </section>
 
-    <section id="about" class="container info">
-      <h2>Par veselīgu dzīvesveidu</h2>
+    <section id="about" class="container info" aria-labelledby="about-heading">
+      <h2 id="about-heading">Par veselīgu dzīvesveidu</h2>
       <p>Veselīgs dzīvesveids nozīmē sabalansētu uzturu, regulāru fizisko aktivitāti, kvalitatīvu miegu un stresa pārvaldību. Šeit atradīsi praktiskus padomus un viegli īstenojamas idejas.</p>
-      <div class="cards">
-        <article>
-          <h3>Uzturs</h3>
+      <div class="cards" role="list">
+        <article role="listitem" aria-labelledby="nutr-heading">
+          <h3 id="nutr-heading">Uzturs</h3>
           <p>Ēd krāsaini, sezonālus produktus, vairāk dārzeņu un pilngraudu produktus. Samazini pārstrādātu pārtiku un cukura patēriņu.</p>
         </article>
-        <article>
-          <h3>Fiziskā aktivitāte</h3>
+
+        <article role="listitem" aria-labelledby="move-heading">
+          <h3 id="move-heading">Fiziskā aktivitāte</h3>
           <p>Mērķējiet uz vismaz 150 minūtēm mērenas aktivitātes nedēļā vai 75 minūtēm intensīvas — pastaigas, riteņbraukšana, spēka treniņi.</p>
         </article>
-        <article>
-          <h3>Miegs un stress</h3>
+
+        <article role="listitem" aria-labelledby="sleep-heading">
+          <h3 id="sleep-heading">Miegs un stress</h3>
           <p>Regulārs miega režīms un vienkāršas relaksācijas tehnikas (elpošana, meditācija) palīdz atjaunoties un saglabāt enerģiju.</p>
         </article>
       </div>
     </section>
 
-    <section id="tips" class="container tips">
-      <h2>Īsie padomi ikdienai</h2>
+    <section id="tips" class="container tips" aria-labelledby="tips-heading">
+      <h2 id="tips-heading">Īsie padomi ikdienai</h2>
       <ul>
         <li>Rītausmā izstaipies 5–10 minūtes.</li>
         <li>Plāno ēdienreizes un iekļauj olbaltumvielas un dārzeņus.</li>
@@ -58,35 +68,32 @@
       </ul>
     </section>
 
-    <section id="recipes" class="container recipes">
-      <h2>Viegla recepte: Greens bļoda</h2>
+    <section id="recipes" class="container recipes" aria-labelledby="recipes-heading">
+      <h2 id="recipes-heading">Viegla recepte: Greens bļoda</h2>
       <p>Sastāvdaļas: špināti, quinoa, avokado, grilēts vistas fileja vai pupiņas, olīveļļa, citrona sula, sāls, pipari.</p>
       <p>Gatavošana: Sajauc visu bļodā, pārlej ar citronu-olīveļļas mērci. Pasniedz svaigu.</p>
     </section>
 
-    <section id="contact" class="container contact">
-      <h2>Sazinies</h2>
+    <section id="contact" class="container contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Sazinies</h2>
       <p>Ja vēlies sadarbību vai konkrētu saturu — raksti zemāk.</p>
-      <form id="contact-form">
-        <label>
-          Vārds
-          <input type="text" name="name" required />
-        </label>
-        <label>
-          E-pasts
-          <input type="email" name="email" required />
-        </label>
-        <label>
-          Ziņa
-          <textarea name="message" rows="4" required></textarea>
-        </label>
+      <form id="contact-form" aria-describedby="form-status" novalidate>
+        <label for="name">Vārds</label>
+        <input id="name" type="text" name="name" required aria-required="true" />
+
+        <label for="email">E-pasts</label>
+        <input id="email" type="email" name="email" required aria-required="true" />
+
+        <label for="message">Ziņa</label>
+        <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
+
         <button type="submit">Sūtīt</button>
-        <p class="form-status" aria-live="polite"></p>
+        <p id="form-status" class="form-status" aria-live="polite"></p>
       </form>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container">
       <p>© <span id="year"></span> Veselīgs dzīvesveids — vienkārši padomi labākai dzīvei.</p>
     </div>
