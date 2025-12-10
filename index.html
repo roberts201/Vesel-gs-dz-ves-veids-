@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="lv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Veselīgs dzīvesveids</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="#">VeselīgsDzīvesveids</a>
+      <nav class="nav">
+        <a href="#about">Par</a>
+        <a href="#tips">Padomi</a>
+        <a href="#recipes">Receptes</a>
+        <a href="#contact">Kontakti</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Dzīvo veselīgāk katru dienu</h1>
+        <p>Vienkārši, praktiski padomi par uzturu, kustību un atpūtu — uzlabot savu labsajūtu mūsdienu ritmā.</p>
+        <a class="cta" href="#tips">Skatīt padomus</a>
+      </div>
+    </section>
+
+    <section id="about" class="container info">
+      <h2>Par veselīgu dzīvesveidu</h2>
+      <p>Veselīgs dzīvesveids nozīmē sabalansētu uzturu, regulāru fizisko aktivitāti, kvalitatīvu miegu un stresa pārvaldību. Šeit atradīsi praktiskus padomus un viegli īstenojamas idejas.</p>
+      <div class="cards">
+        <article>
+          <h3>Uzturs</h3>
+          <p>Ēd krāsaini, sezonālus produktus, vairāk dārzeņu un pilngraudu produktus. Samazini pārstrādātu pārtiku un cukura patēriņu.</p>
+        </article>
+        <article>
+          <h3>Fiziskā aktivitāte</h3>
+          <p>Mērķējiet uz vismaz 150 minūtēm mērenas aktivitātes nedēļā vai 75 minūtēm intensīvas — pastaigas, riteņbraukšana, spēka treniņi.</p>
+        </article>
+        <article>
+          <h3>Miegs un stress</h3>
+          <p>Regulārs miega režīms un vienkāršas relaksācijas tehnikas (elpošana, meditācija) palīdz atjaunoties un saglabāt enerģiju.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="tips" class="container tips">
+      <h2>Īsie padomi ikdienai</h2>
+      <ul>
+        <li>Rītausmā izstaipies 5–10 minūtes.</li>
+        <li>Plāno ēdienreizes un iekļauj olbaltumvielas un dārzeņus.</li>
+        <li>Atceries dzert ūdeni — 1,5–2 litrus dienā (atkarībā no aktivitātes).</li>
+        <li>Pārtraukumi ekrānam katru stundu vismaz 5 minūtes.</li>
+      </ul>
+    </section>
+
+    <section id="recipes" class="container recipes">
+      <h2>Viegla recepte: Greens bļoda</h2>
+      <p>Sastāvdaļas: špināti, quinoa, avokado, grilēts vistas fileja vai pupiņas, olīveļļa, citrona sula, sāls, pipari.</p>
+      <p>Gatavošana: Sajauc visu bļodā, pārlej ar citronu-olīveļļas mērci. Pasniedz svaigu.</p>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h2>Sazinies</h2>
+      <p>Ja vēlies sadarbību vai konkrētu saturu — raksti zemāk.</p>
+      <form id="contact-form">
+        <label>
+          Vārds
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          E-pasts
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          Ziņa
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+        <button type="submit">Sūtīt</button>
+        <p class="form-status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Veselīgs dzīvesveids — vienkārši padomi labākai dzīvei.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
