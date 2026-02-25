@@ -1,0 +1,29 @@
+/* Recepšu kartīšu specifiskie uzlabojumi */
+.food-grid article h3 {
+  color: var(--primary-dark);
+  margin: 15px 0 10px 0;
+  font-size: 1.4rem;
+}
+
+.food-grid article p {
+  font-size: 0.95rem;
+  text-align: left; /* Labākai lasāmībai */
+  margin-bottom: 8px;
+}
+
+.food-grid article strong {
+  color: var(--accent);
+}
+
+/* Attēla efekts - pietuvināšana uzbraucot ar peli */
+.food-grid article img {
+  transition: transform 0.5s ease;
+}
+
+.food-grid article:hover img {
+  transform: scale(1.05);
+}
+
+.food-grid article {
+  overflow: hidden; /* Lai palielinātais attēls neiziet ārpus rāmja */
+}
